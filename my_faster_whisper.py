@@ -1,3 +1,4 @@
+
 from faster_whisper import WhisperModel
 
 model = WhisperModel(
@@ -12,10 +13,11 @@ segments, info = model.transcribe(
     task="transcribe",
     beam_size=5,
     temperature=0.0,
-    vad_filter=True,         # thay cho no_speech_threshold
+    vad_filter=True,
 )
 
 for seg in segments:
     print(
         f"[{seg.start:.2f}s → {seg.end:.2f}s] {seg.text}"
     )
+
